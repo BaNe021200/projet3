@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Velib'</title>
+    <meta name="viewport" content="initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="newStyle.css">
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <!-- <div id="blocPage">-->
+
+
+    <div id="slideShow">
+
+
+        <ul>
+            <li><p id="Diapo1" class="diapos"><span id="bienvenue">Bienvenue</span> sur cette application.<br> Après quelques étapes vous pourrez-louer un vélo dans Paris pour 20mins. Commencez par cliquer un marker comme le montre l'illustration et passez à l'étape suivante</p><img src="img/d1.jpg"  alt="Diapo1"></li>
+            <li><p id="Diapo2" class="diapos">Déplacez-vous dans la carte et clickez ensuite sur le bouton louer pour passer à l'étape suivante</p><img src="img/d2.jpg"  alt="Diapo2"></li>
+            <li><p id="Diapo3" class="diapos">Signez dans le cadre et cliquez sur <span id="validateTxtButton"> valider</span>. Si vous souhaitez refaire votre signature cliquer sur <span id="clearTxtButton"> effacer</span></p><img src="img/d3.jpg"  alt="Diapo3"></li>
+            <li><p id="Diapo4" class="diapos">Le message de confirmation de location comprenant le nom de la station s'affiche en bas et le compte-à-rebours de la durée de location commence. une seule location à la fois est possible. si vous voulez louer un autre vélo, attendez la fin du compte à rebours ou clikez sur <span id="cancelTxtButton"> annuler</span> pour annuler et recommencez l'opération</p><img src="img/d4.jpg" alt="Diapo4"></li>
+            <li><p id="Diapo5" class="diapos">Lorsque la touche <span id="cancelTxtButton">annuler</span> a été activée, un message confirme que la location à été annulée par l'utilisateur</p><img src="img/d5.jpg" alt="Diapo5"></li>
+            <li><p id="Diapo6" class="diapos">Lorsque le temps est écoulé, un message vous informe de l'annulation de votre location. Vous pouvez soit quittez l'application soit réitérer une location.<br> Ce didacticiel touche à sa fin. Merci de l'avoir suivi. Vous savez maintenant comment louer un vélo. Nous souhaitons donc une bonne route.</p><img src="img/d6.jpg" alt="Diapo6"></li>
+            
+        </ul>
+        <div id="arrows">
+
+            <img src="img/slidecontrol/back.png" id="back">
+            <img src="img/slidecontrol/forward.png" id="forward">
+
+
+        </div>
+
+    </div>
+
+
+    <div id="velib">
+        <div id="map"></div>
+
+        <div id="rightPanel">
+            <div id="idStation" class="idStationHeight">
+                <p id="rightPanelStart">Clickez sur l'un des markers dans la carte ci-contre </p>
+                <h2 id="idStationH2">identifiant de la station</h2>
+                <div id="idStationName"></div>
+                <div id="idStationAddress"></div>
+                <h2 id="idTeck">Caractérisques techniques</h2>
+
+                <h3>Statut de la station</h3>
+                <div id="InfoStat"></div>
+                <div id="idStationTech">
+                    <h3>Nombre de places de stationnement total</h3>
+                    <div id="infoBS" class="infos"></div>
+                    <h3>Nombre de places de stationnemnent disponibles</h3>
+                    <div id="InfoABS" class="infos"></div>
+                    <h3>Nombre de vélos disponibles et opérationnels</h3>
+                    <div id="infoAB" class="infos"></div>
+
+                    <div id="location">
+                        <div id="boutonLocation">
+                            <button id="louer">LOUER</button>
+                        </div>
+
+                        <div id="cadre">
+                            <div id="canvasDiv">
+                                
+                                <canvas id="canvas"   width="300" height="200" disabled></canvas><!--width="300" height="200"-->
+                            </div>
+                            <div id="button">
+                                <button id="cancel" disabled>annuler</button>
+                                <button id="clear" data-action="clear">effacer</button>
+
+                                <button id="valider" disabled>Valider</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        
+        <div id="cancelLocationByCountDown" class="red hiddenDisplay">La location est expirée. veuillez effectuez une autre location ou quittez l'appication</div>
+        <!---->
+        <div id="cancelLocationByUser" class="red hiddenDisplay">Location annulée par l'utilisateur</div>
+        <div id="countDown" class="hiddenDisplay">Location station &nbsp;<span id="veloStation"> </span> &nbsp;pour <span id="timer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>mins</div>
+
+    </footer>
+
+    <script src="js/lib/jQuery.js"></script>
+   <!-- <script src="js/lib/jquery.mobile-1.4.5.js"></script>-->
+    <script src="js/SlideShow/SlideShow.js"></script>
+    <script src="js/SlideShow/viewSlideshow.js"></script>
+
+    <script src="js/SlideShow/mainSlideShow.js"></script>
+
+    <script src="js/velib/misc.js"></script>
+    <script src="js/velib/Canvas.js"></script>
+    <script src="js/velib/timer.js"></script>
+
+    <script src="js/velib/Map.js"></script>
+    <script src="js/velib/view.js"></script>
+
+    <script src="js/velib/Station.js"></script>
+
+
+    <script src="js/velib/main.js"></script>
+    <script id="google" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3-komNwzPDHDvRkT2vDz1LoaRtgHAv7A&callback=initMap"></script>
+</body>
+
+</html>
